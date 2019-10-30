@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efffe664-c151-4b29-983b-52de41ecedc2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/github.com/tharun208/mars-rover/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mars-rower.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rover/rover.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/rover/rover.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rover/rover.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/github.com/tharun208/mars-rover/roverutil/roverutil.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,9 +34,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/github.com/tharun208/mars-rover" />
+      <recent name="$PROJECT_DIR$/src/github.com/tharun208/mars-rover/rover/roverutil" />
+      <recent name="$PROJECT_DIR$/src/github.com/tharun208/mars-rover/runner" />
       <recent name="$PROJECT_DIR$/src/rover" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -59,7 +64,8 @@
       <option name="presentableId" value="Default" />
       <updated>1572414132651</updated>
       <workItem from="1572414134913" duration="14732000" />
-      <workItem from="1572447069040" duration="493000" />
+      <workItem from="1572447069040" duration="1397000" />
+      <workItem from="1572450488320" duration="1544000" />
     </task>
     <servers />
   </component>
