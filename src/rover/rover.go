@@ -6,75 +6,75 @@ type Rover struct {
     orientation string
 }
 
-func (r *Rover) setXPosition(x int) {
+func (r *Rover) SetXPosition(x int) {
  	r.rowPosition = x
 }
 func (r Rover) getXPosition() int {
  	return r.rowPosition
 }
 
-func (r *Rover) setYPosition(y int) {
+func (r *Rover) SetYPosition(y int) {
  	r.columnPosition = y
 }
 func (r Rover) getYPosition() int {
  	return r.columnPosition
 }
 
-func (r *Rover) setPosition(x string) {
+func (r *Rover) SetPosition(x string) {
  	r.orientation = x
  }
 func (r Rover) getPosition() string {
  	return r.orientation
 }
 
-func (r *Rover) processCommands(commands string)  {
+func (r *Rover) ProcessCommands(commands string)  {
     for _, command := range commands {
-     if(string(command) == "L") {
-        r.turnRoverLeft();
-     } else if(string(command) == "R") {
-        r.turnRoverRight();
-     } else if(string(command) == "M") {
-        r.moveRover();
+     if string(command) == "L" {
+        r.turnRoverLeft()
+     } else if string(command) == "R" {
+        r.turnRoverRight()
+     } else if string(command) == "M" {
+        r.moveRover()
      }
     }
 }
 
 func (r *Rover) turnRoverLeft() {
     currentOrientation := r.getPosition();
-    switch(currentOrientation) {
+    switch currentOrientation {
     case "N":
-      r.setPosition("W")
+      r.SetPosition("W")
     case "S":
-      r.setPosition("E")
+      r.SetPosition("E")
     case "E":
-       r.setPosition("N")
+       r.SetPosition("N")
     case "W":
-       r.setPosition("S")
+       r.SetPosition("S")
     }
 }
 
 func (r *Rover) turnRoverRight() {
-    currentOrientation := r.getPosition();
-    switch(currentOrientation) {
+    currentOrientation := r.getPosition()
+    switch currentOrientation {
     case "N":
-      r.setPosition("E")
+      r.SetPosition("E")
     case "S":
-      r.setPosition("W")
+      r.SetPosition("W")
     case "E":
-       r.setPosition("S")
+       r.SetPosition("S")
     case "W":
-       r.setPosition("N")
+       r.SetPosition("N")
     }
 }
 
 func (r *Rover) moveRover() {
-    if(r.getPosition() == "N") {
-        r.setYPosition(r.getYPosition() + 1);
-    } else if(r.getPosition() == "E") {
-        r.setXPosition(r.getXPosition() + 1);
-    } else if(r.getPosition() == "W") {
-        r.setXPosition(r.getXPosition() - 1);
-    } else if(r.getPosition() =="S") {
-        r.setYPosition(r.getYPosition() - 1);
+    if r.getPosition() == "N" {
+        r.SetYPosition(r.getYPosition() + 1)
+    } else if r.getPosition() == "E" {
+        r.SetXPosition(r.getXPosition() + 1)
+    } else if r.getPosition() == "W" {
+        r.SetXPosition(r.getXPosition() - 1)
+    } else if r.getPosition() =="S" {
+        r.SetYPosition(r.getYPosition() - 1)
     }
 }
