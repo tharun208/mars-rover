@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    "github.com/tharun208/mars-rover/roverutil"
+    "marsrover/tharun208/mars-rover/roverutil"
 )
 
 func main() {
@@ -17,7 +17,7 @@ func main() {
         fmt.Scan(&rowPosition, &columnPosition)
         fmt.Println("Enter the Orientation")
         fmt.Scanln(&initialOrientation)
-        rover := roverutil.Rover{}
+        rover := new(roverutil.Rover)
         rover.SetXPosition(rowPosition)
         rover.SetYPosition(columnPosition)
         rover.SetPosition(initialOrientation)
