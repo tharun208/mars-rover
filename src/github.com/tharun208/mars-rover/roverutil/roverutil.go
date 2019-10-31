@@ -1,46 +1,46 @@
 package roverutil
 
 type Rover struct {
-    rowPosition int
-    columnPosition int
-    orientation string
+    RowPosition    int
+    ColumnPosition int
+    Orientation    string
 }
 
 func (r *Rover) SetXPosition(x int) {
- 	r.rowPosition = x
+ 	r.RowPosition = x
 }
 func (r Rover) GetXPosition() int {
- 	return r.rowPosition
+ 	return r.RowPosition
 }
 
 func (r *Rover) SetYPosition(y int) {
- 	r.columnPosition = y
+ 	r.ColumnPosition = y
 }
 func (r Rover) GetYPosition() int {
- 	return r.columnPosition
+ 	return r.ColumnPosition
 }
 
 func (r *Rover) SetPosition(x string) {
- 	r.orientation = x
+ 	r.Orientation = x
  }
 func (r Rover) GetPosition() string {
- 	return r.orientation
+ 	return r.Orientation
 }
 
 func (r *Rover) ProcessCommands(commands string)  {
     for _, command := range commands {
      if string(command) == "L" {
-        r.turnRoverLeft()
+        r.TurnRoverLeft()
      } else if string(command) == "R" {
-        r.turnRoverRight()
+        r.TurnRoverRight()
      } else if string(command) == "M" {
         r.moveRover()
      }
     }
 }
 
-func (r *Rover) turnRoverLeft() {
-    currentOrientation := r.GetPosition();
+func (r *Rover) TurnRoverLeft() {
+    currentOrientation := r.GetPosition()
     switch currentOrientation {
     case "N":
       r.SetPosition("W")
@@ -53,7 +53,7 @@ func (r *Rover) turnRoverLeft() {
     }
 }
 
-func (r *Rover) turnRoverRight() {
+func (r *Rover) TurnRoverRight() {
     currentOrientation := r.GetPosition()
     switch currentOrientation {
     case "N":

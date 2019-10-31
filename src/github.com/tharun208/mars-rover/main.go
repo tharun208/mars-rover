@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    "marsrover/tharun208/mars-rover/roverutil"
+    "github.com/tharun208/mars-rover/roverutil"
 )
 
 func main() {
