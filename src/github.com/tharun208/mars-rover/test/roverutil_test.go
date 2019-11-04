@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/tharun208/mars-rover/roverutil"
+	"github.com/tharun208/mars-rover/pkg/roverutil"
 	"testing"
 )
 
