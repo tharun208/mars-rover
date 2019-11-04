@@ -1,30 +1,35 @@
 package roverutil
 
 type Rover struct {
-    RowPosition    int
-    ColumnPosition int
-    Orientation    string
+    rowPosition    int `json:"x"`
+    columnPosition int `json:"y"`
+    orientation   string
 }
 
+func NewRover() Rover {
+    rover := Rover{}
+    rover.orientation = "N"
+    return rover
+}
 func (r *Rover) SetXPosition(x int) {
- 	r.RowPosition = x
+ 	r.rowPosition = x
 }
 func (r Rover) GetXPosition() int {
- 	return r.RowPosition
+ 	return r.rowPosition
 }
 
 func (r *Rover) SetYPosition(y int) {
- 	r.ColumnPosition = y
+ 	r.columnPosition = y
 }
 func (r Rover) GetYPosition() int {
- 	return r.ColumnPosition
+ 	return r.columnPosition
 }
 
 func (r *Rover) SetPosition(x string) {
- 	r.Orientation = x
+ 	r.orientation = x
  }
 func (r Rover) GetPosition() string {
- 	return r.Orientation
+ 	return r.orientation
 }
 
 func (r *Rover) ProcessCommands(commands string)  {

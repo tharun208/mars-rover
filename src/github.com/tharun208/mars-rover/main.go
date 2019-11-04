@@ -1,11 +1,12 @@
 package main
 
 import (
-    "fmt"
-    "github.com/tharun208/mars-rover/roverutil"
+    "github.com/gin-gonic/gin"
+    "github.com/tharun208/mars-rover/pkg/roverutil"
+    "github.com/tharun208/mars-rover/routes"
 )
 
-func main() {
+/* func main() {
     var commands string
     fmt.Println("Enter the No Of Rovers")
     var noOfRovers int
@@ -27,4 +28,16 @@ func main() {
         fmt.Println("The Rover is at X ",rover.GetXPosition()," Y ",rover.GetYPosition()," facing ",rover.GetPosition())
         noOfRovers--
     }
+}
+*/
+
+var RoverArray = make([]roverutil.Rover,100)
+
+func main() {
+        server := gin.Default()
+        router := server.Group("/rover")
+        router.POST("/start-rover", routes.InitiateRouter)
+        router.POST("/rover-command", routes.ExecuteCommand)
+        router.GET("/current-position", routes.GetRoverPosition)
+        server.Run(":8081")
 }
