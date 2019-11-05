@@ -35,9 +35,13 @@ var RoverArray = make([]roverutil.Rover,100)
 
 func main() {
         server := gin.Default()
+        server.Use(gin.Logger())
         router := server.Group("/rover")
-        router.POST("/start-rover", routes.InitiateRouter)
-        router.POST("/rover-command", routes.ExecuteCommand)
-        router.GET("/current-position", routes.GetRoverPosition)
+        router.POST("/start", routes.InitiateRouter)
+        router.GET("/turn-right", routes.TurnRoverRight)
+        router.GET("/turn-left", routes.TurnRoverLeft)
+        router.GET("/move", routes.MoveRover)
+        router.POST("/command", routes.ExecuteCommand)
+        router.GET("/position", routes.GetRoverPosition)
         server.Run(":8081")
 }

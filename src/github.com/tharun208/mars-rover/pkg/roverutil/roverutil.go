@@ -39,7 +39,7 @@ func (r *Rover) ProcessCommands(commands string)  {
      } else if string(command) == "R" {
         r.TurnRoverRight()
      } else if string(command) == "M" {
-        r.moveRover()
+        r.MoveRover()
      }
     }
 }
@@ -72,7 +72,7 @@ func (r *Rover) TurnRoverRight() {
     }
 }
 
-func (r *Rover) moveRover() {
+func (r *Rover) MoveRover() {
     if r.GetPosition() == "N" {
         r.SetYPosition(r.GetYPosition() + 1)
     } else if r.GetPosition() == "E" {

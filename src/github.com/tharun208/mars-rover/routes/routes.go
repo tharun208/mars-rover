@@ -3,12 +3,12 @@ package routes
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/tharun208/mars-rover/pkg/roverutil"
-	_ "github.com/tharun208/mars-rover/pkg/roverutil"
 	"net/http"
 )
 
 var rover roverutil.Rover
 func InitiateRouter(c *gin.Context) {
+	// var jsonObj roverutil.Rover
 	var jsonObj map[string]int
 	c.BindJSON(&jsonObj)
 	rover = roverutil.NewRover()
@@ -48,6 +48,37 @@ func ExecuteCommand(c *gin.Context) {
 			})
 	}
 }
+
+func TurnRoverRight(c *gin.Context) {
+	rover.TurnRoverRight()
+	c.JSON(http.StatusOK,
+		gin.H{
+			"orientation": rover.GetPosition(),
+			"x": rover.GetXPosition(),
+			"y": rover.GetYPosition(),
+		})
+}
+
+func TurnRoverLeft(c *gin.Context) {
+	rover.TurnRoverLeft()
+	c.JSON(http.StatusOK,
+		gin.H{
+			"orientation": rover.GetPosition(),
+			"x": rover.GetXPosition(),
+			"y": rover.GetYPosition(),
+		})
+}
+
+func MoveRover(c *gin.Context) {
+	rover.MoveRover()
+	c.JSON(http.StatusOK,
+		gin.H{
+			"orientation": rover.GetPosition(),
+			"x": rover.GetXPosition(),
+			"y": rover.GetYPosition(),
+		})
+}
+
 func GetRoverPosition(c *gin.Context) {
 	c.JSON(http.StatusOK,
 		gin.H{
