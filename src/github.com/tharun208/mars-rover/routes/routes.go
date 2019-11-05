@@ -7,12 +7,13 @@ import (
 )
 
 var rover roverutil.Rover
+var RoverArray = make([]roverutil.Rover,100)
 func InitiateRouter(c *gin.Context) {
 	// var jsonObj roverutil.Rover
 	var jsonObj map[string]int
 	c.BindJSON(&jsonObj)
 	rover = roverutil.NewRover()
-	if jsonObj["x"] != 0 && jsonObj["y"] != 0 {
+	if jsonObj["x"] > 0 && jsonObj["y"] > 0 {
 		rover.SetXPosition(jsonObj["x"])
 		rover.SetYPosition(jsonObj["y"])
 		c.JSON(http.StatusOK,
